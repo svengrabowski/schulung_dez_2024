@@ -1,0 +1,1 @@
+export * from './components/recipe-list/recipe-list.component';
