@@ -1,26 +1,6 @@
-enum PortionUnits {
-    NONE = '',
-    GRAM = 'g',
-    CUBE = 'Würfel',
-    MILILITER = 'ml',
-    TEASPOON = 'TL',
-    TABLESPOON = 'EL',
-    BALL = 'Kugel',
-    PINCH = 'Prise',
-}
+import { TimeUnit, Difficulty, PortionUnits, Recipe } from "../model";
 
-enum TimeUnit {
-    MINUTES = 'Min.',
-    HOURES = 'Std.',
-}
-
-enum Difficulty {
-    EASY = 'Einfach',
-    MEDIUM = 'Mittel',
-    HARD = 'Schwer'
-}
-
-export const recipes = [
+export const recipes: Recipe[] = [
     {
         name: 'Pizza',
         img: '/recipe_pictures/pizza.jpg',

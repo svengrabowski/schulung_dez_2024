@@ -1,0 +1,16 @@
+<mat-card appearance="outlined">
+    <mat-card-header>
+        <img mat-card-avatar [src]="recipe().img">
+        <mat-card-title>{{ recipe().name }}</mat-card-title>
+        <mat-card-subtitle>Rezept</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="recipe().img">
+    <mat-card-content>
+        <p><b>Dauer:</b> {{ recipe().duration.value }} {{ recipe().duration.unit }}</p>
+        <p><b>Schwierigkeit:</b> {{ recipe().difficulty }}</p>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+        <a href="#" mat-button>Anzeigen</a>
+    </mat-card-actions>
+</mat-card>

@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 import { recipes } from '../../data/recipe.dummy.data';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { RecipeListItemComponent } from '../recipe-list-item/recipe-list-item.component';
 
 @Component({
   selector: 'app-recipe-list',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatDividerModule, MatGridListModule],
+  imports: [RecipeListItemComponent],
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent {
