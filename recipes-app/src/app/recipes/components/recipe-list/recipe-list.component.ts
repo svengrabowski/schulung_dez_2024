@@ -12,5 +12,5 @@ import { MatGridListModule } from '@angular/material/grid-list';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent {
-  protected recipes: any[] = recipes;
+  protected recipes = recipes;
 }
