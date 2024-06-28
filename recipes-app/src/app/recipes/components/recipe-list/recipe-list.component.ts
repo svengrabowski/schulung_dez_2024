@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { recipes } from '../../data/recipe.dummy.data';
+import { Component, inject } from '@angular/core';
 import { RecipeListItemComponent } from '../recipe-list-item/recipe-list-item.component';
+import { RecipeService } from '../../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -9,5 +9,5 @@ import { RecipeListItemComponent } from '../recipe-list-item/recipe-list-item.co
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent {
-  protected recipes = recipes;
+  protected recipes = inject(RecipeService).getAllRecipes();
 }
