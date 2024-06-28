@@ -42,7 +42,7 @@ export const recipes: Recipe[] = [
                 name: 'Olivenöl',
             },
             {
-                einheit: PortionUnits.NONE,
+                unit: PortionUnits.NONE,
                 quantity: 4,
                 name: 'Romatomaten',
             },
@@ -57,7 +57,7 @@ export const recipes: Recipe[] = [
                 name: 'Salz',
             },
             {
-                einheit: PortionUnits.BALL,
+                unit: PortionUnits.BALL,
                 quantity: 1,
                 name: 'Büffelmozzarella',
             },
