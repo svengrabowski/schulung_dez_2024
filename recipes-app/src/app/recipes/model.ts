@@ -32,6 +32,7 @@ export interface Ingridient {
 }
 
 export interface Recipe {
+    id: string;
     name: string;
     img: string;
     servings: number;
@@ -42,6 +43,7 @@ export interface Recipe {
 }
 
 export interface RecipeDto {
+    id: string;
     name: string;
     img: string;
     portions: number;
