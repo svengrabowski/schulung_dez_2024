@@ -1,0 +1,120 @@
+<h1>Neues Rezept</h1>
+<form [formGroup]="recipeForm" (ngSubmit)="submitForm()">
+  <ng-container class="form-container">
+    <mat-form-field>
+      <mat-label>Rezept Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error>
+        <app-form-error [formControlWithErrors]="recipeForm.controls.name" />
+      </mat-error>
+    </mat-form-field>
+    <div [formGroup]="recipeForm.controls.duration" >
+      <mat-form-field>
+        <mat-label>Dauer</mat-label>
+        <input matInput type="number" formControlName="value">
+        <mat-error>
+          <app-form-error [formControlWithErrors]="recipeForm.controls.duration.controls.value" />
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Einheit</mat-label>
+        <mat-select formControlName="unit">
+          @for (timeUnitOption of timeUnitOptions; track $index) {
+            <mat-option [value]="timeUnitOption.value">
+              {{ timeUnitOption.label }}
+            </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>Schwierigkeitsgrad</mat-label>
+      <mat-select formControlName="difficulty">
+        @for (difficultyOption of difficultyOptions; track $index) {
+          <mat-option [value]="difficultyOption.value">
+            {{ difficultyOption.label }}
+          </mat-option>
+        }
+      </mat-select>
+      <mat-error>
+        <app-form-error [formControlWithErrors]="recipeForm.controls.difficulty" />
+      </mat-error>
+    </mat-form-field>
+    <h5>Zutaten:</h5>
+    <mat-form-field>
+      <mat-label>Anzahl Portionen</mat-label>
+      <input matInput type="number" formControlName="servings">
+      <mat-error>
+        <app-form-error [formControlWithErrors]="recipeForm.controls.servings" />
+      </mat-error>
+    </mat-form-field>
+
+    <ng-container formArrayName="ingridients">
+      @for (ingridientForm of recipeForm.controls.ingridients.controls; track $index) {
+        <div [formGroup]="ingridientForm">
+          <mat-form-field>
+            <mat-label>Zutaten Name</mat-label>
+            <input matInput formControlName="name">
+            <mat-error>
+              <app-form-error [formControlWithErrors]="ingridientForm.controls.name" />
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Anzahl</mat-label>
+            <input matInput type="number" formControlName="quantity">
+            <mat-error>
+              <app-form-error [formControlWithErrors]="ingridientForm.controls.quantity" />
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Einheit</mat-label>
+            <mat-select formControlName="unit">
+              @for (portionUnitOption of portionUnitOptions; track $index) {
+                <mat-option [value]="portionUnitOption.value">
+                  {{ portionUnitOption.label }}
+                </mat-option>
+              }
+            </mat-select>
+            <mat-error>
+              <app-form-error [formControlWithErrors]="ingridientForm.controls.unit" />
+            </mat-error>
+          </mat-form-field>
+          @if ($index > 1) {
+            <button mat-icon-button (click)="removeIngredientFormGroup($index)" type="button">
+              <mat-icon>
+                delete_forever
+              </mat-icon>
+            </button>
+          }
+        </div>
+      }
+      <div class="pd-b-sm">
+        <button mat-button type="button" (click)="addIngredientFormGroup()">
+          <mat-icon>add</mat-icon>
+          Weitere Zutat
+        </button>
+      </div>
+    </ng-container>
+
+    <mat-form-field>
+      <mat-label>Zubereitung</mat-label>
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="10"
+        cdkAutosizeMaxRows="50"
+        formControlName="preparation">
+      </textarea>
+      <mat-error>
+        <app-form-error [formControlWithErrors]="recipeForm.controls.preparation" />
+      </mat-error>
+    </mat-form-field>
+  </ng-container>
+
+  <div class="pd-y-sm">
+    <button mat-button type="submit">
+      <mat-icon>save</mat-icon>
+      Speichern
+    </button>
+  </div>
+</form>
