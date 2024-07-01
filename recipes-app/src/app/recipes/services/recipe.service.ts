@@ -3,12 +3,13 @@ import { Recipe, RecipeDto } from '../model';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import {mapRecipeDtoArrayToRecipeArray, mapRecipeDtoToRecipe, mapRecipeToRecipeDto} from '../util/recipe.mapping';
+import { environment } from "@environment/exports";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
-  private readonly baseUrl = 'http://localhost:3000/';
+  private readonly baseUrl = environment.apiBaseUrl;
   private readonly httpClient = inject(HttpClient);
 
   public getAllRecipes(): Observable<Recipe[]> {
