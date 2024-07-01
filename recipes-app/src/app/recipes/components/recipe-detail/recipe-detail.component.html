@@ -4,6 +4,10 @@
 <app-recipe-preparation [preparation]="recipe().preparation"/>
 <mat-divider />
 <div class="flex-container flex-justify-content-end pd-y-sm">
+  <a [routerLink]="['/recipes/edit', recipe().id]" mat-button>
+    <mat-icon>edit</mat-icon>
+    Bearbeiten
+  </a>
   <button mat-button (click)="deleteRecipe()">
     <mat-icon>delete</mat-icon>
     Rezept löschen

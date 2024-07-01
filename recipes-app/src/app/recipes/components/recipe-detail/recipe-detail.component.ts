@@ -7,9 +7,9 @@ import { getEmptyRecipe } from "../../util/recipe.mapping";
 import { RecipeChipsListComponent } from "../recipe-chips-list/recipe-chips-list.component";
 import { RecipeIngridientListComponent } from "../recipe-ingridient-list/recipe-ingridient-list.component";
 import { RecipePreparationComponent } from "../recipe-preparation/recipe-preparation.component";
-import { MatButton } from "@angular/material/button";
+import { MatAnchor, MatButton } from "@angular/material/button";
 import { MatIcon } from "@angular/material/icon";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { MatDivider } from "@angular/material/divider";
 
 @Component({
@@ -22,6 +22,8 @@ import { MatDivider } from "@angular/material/divider";
     MatButton,
     MatIcon,
     MatDivider,
+    MatAnchor,
+    RouterLink,
   ],
   templateUrl: './recipe-detail.component.html'
 })

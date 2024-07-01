@@ -1,4 +1,8 @@
-<h1>Neues Rezept</h1>
+@if (recipeToEdit) {
+  <h1>Rezept bearbeiten</h1>
+} @else {
+  <h1>Neues Rezept</h1>
+}
 <form [formGroup]="recipeForm" (ngSubmit)="submitForm()">
   <ng-container class="form-container">
     <mat-form-field>

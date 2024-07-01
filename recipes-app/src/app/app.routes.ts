@@ -20,6 +20,11 @@ export const routes: Routes = [
     title: 'New Recipe',
   },
   {
+    path: 'recipes/edit/:recipeId',
+    component: RecipeFormComponent,
+    title: 'Edit Recipe',
+  },
+  {
     path: 'recipes/:recipeId',
     component: RecipeDetailComponent,
     title: 'Recipe Detail',
