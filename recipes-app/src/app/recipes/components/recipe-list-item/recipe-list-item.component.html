@@ -11,6 +11,6 @@
     </mat-card-content>
     <mat-divider></mat-divider>
     <mat-card-actions>
-        <a href="#" mat-button>Anzeigen</a>
+        <a [routerLink]="['/recipes', recipe().id]" mat-button>Anzeigen</a>
     </mat-card-actions>
 </mat-card>

@@ -1,4 +1,4 @@
-import { Recipe, RecipeDto } from "../model";
+import {Difficulty, Recipe, RecipeDto, TimeUnit} from "../model";
 
 export function mapRecipeDtoToRecipe(recipeDto: RecipeDto): Recipe {
     return {
@@ -29,3 +29,19 @@ export function mapRecipeToRecipeDto(recipe: Recipe): RecipeDto {
         preparation: recipe.preparation
     }
 };
+
+export function getEmptyRecipe(): Recipe {
+  return {
+    id: '',
+    name: '',
+    img: '',
+    servings: 0,
+    difficulty: Difficulty.EASY,
+    duration: {
+      value: 0,
+      unit: TimeUnit.MINUTES,
+    },
+    ingridients: [],
+    preparation: '',
+  }
+}

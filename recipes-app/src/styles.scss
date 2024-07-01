@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { 
-    margin: 0; 
+body {
+    margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: #e0e0e0;
 }
@@ -79,4 +79,17 @@ body {
 
   .nav-headline {
     padding-left: 1rem;
+  }
+
+  h2 {
+    padding-top: 2rem;
+  }
+
+  .formatted {
+    white-space: pre-wrap;
+  }
+
+  .pd-y-sm {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
