@@ -19,6 +19,7 @@ import { CdkTextareaAutosize } from "@angular/cdk/text-field";
 import { Router } from "@angular/router";
 import { toObservable } from "@angular/core/rxjs-interop";
 import { distinctUntilChanged, filter, switchMap, tap } from "rxjs";
+import { difficultyOptions, portionUnitOptions, timeUnitOptions } from "../../util/recipe.options";
 
 @Component({
   selector: 'app-recipe-form',
@@ -43,64 +44,9 @@ export class RecipeFormComponent {
 
   protected recipeForm;
   protected recipeToEdit: Recipe | undefined;
-  protected timeUnitOptions = [
-    {
-      value: TimeUnit.MINUTES,
-      label: 'Minuten',
-    },
-    {
-      value: TimeUnit.HOURES,
-      label: 'Stunden',
-    },
-  ];
-  protected difficultyOptions = [
-    {
-      value: Difficulty.EASY,
-      label: 'Einfach',
-    },
-    {
-      value: Difficulty.MEDIUM,
-      label: 'Mittel',
-    },
-    {
-      value: Difficulty.HARD,
-      label: 'Schwer',
-    },
-  ];
-  protected portionUnitOptions = [
-    {
-      value: PortionUnits.NONE,
-      label: 'Keine',
-    },
-    {
-      value: PortionUnits.GRAM,
-      label: 'Gramm',
-    },
-    {
-      value: PortionUnits.CUBE,
-      label: 'Würfel',
-    },
-    {
-      value: PortionUnits.MILILITER,
-      label: 'Milliliter',
-    },
-    {
-      value: PortionUnits.TEASPOON,
-      label: 'Teelöffel',
-    },
-    {
-      value: PortionUnits.TABLESPOON,
-      label: 'Esslöffel',
-    },
-    {
-      value: PortionUnits.BALL,
-      label: 'Kugel',
-    },
-    {
-      value: PortionUnits.PINCH,
-      label: 'Prise',
-    },
-  ];
+  protected timeUnitOptions = timeUnitOptions
+  protected difficultyOptions = difficultyOptions
+  protected portionUnitOptions = portionUnitOptions;
 
   private readonly formBuilder = inject(NonNullableFormBuilder);
   private readonly recipeService = inject(RecipeService);
