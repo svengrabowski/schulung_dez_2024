@@ -1,14 +1,18 @@
-import { Injectable } from '@angular/core';
-import { recipes } from '../data/recipe.dummy.data';
-import { Recipe } from '../model';
+import { Injectable, inject } from '@angular/core';
+import { Recipe, RecipeDto } from '../model';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
+import { mapRecipeDtoArrayToRecipeArray } from '../util/recipe.mapping';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
-  private recipes = recipes;
+  private readonly httpClient = inject(HttpClient);
 
-  public getAllRecipes(): Recipe[] {
-    return this.recipes;
+  public getAllRecipes(): Observable<Recipe[]> {
+    return this.httpClient.get<RecipeDto[]>('http://localhost:3000/recipes').pipe(
+      map(mapRecipeDtoArrayToRecipeArray),
+    );
   }
 }

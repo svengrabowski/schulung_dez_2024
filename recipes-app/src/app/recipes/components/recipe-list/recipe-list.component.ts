@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RecipeListItemComponent } from '../recipe-list-item/recipe-list-item.component';
 import { RecipeService } from '../../services/recipe.service';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-recipe-list',
@@ -9,5 +10,5 @@ import { RecipeService } from '../../services/recipe.service';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent {
-  protected recipes = inject(RecipeService).getAllRecipes();
+  protected recipes = toSignal(inject(RecipeService).getAllRecipes());
 }
