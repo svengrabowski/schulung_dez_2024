@@ -18,6 +18,12 @@ export class RecipeService {
     );
   }
 
+  public getRecipe(id: string): Observable<Recipe> {
+    return this.httpClient.get<RecipeDto>(`${this.baseUrl}recipes/${id}`).pipe(
+      map(mapRecipeDtoToRecipe),
+    );
+  }
+
   public addNewRecipe(recipe: Recipe): Observable<Recipe> {
     const recipeDto = mapRecipeToRecipeDto(recipe)
     return this.httpClient.post<RecipeDto>(`${this.baseUrl}recipes`, recipeDto).pipe(
