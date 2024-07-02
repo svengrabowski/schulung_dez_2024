@@ -38,6 +38,7 @@ export function getEmptyRecipe(): Recipe {
     name: '',
     img: '',
     servings: 0,
+    lastEdited: '',
     difficulty: Difficulty.EASY,
     duration: {
       value: 0,
