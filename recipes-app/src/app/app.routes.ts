@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
-import { RecipeListComponent, RecipeDetailComponent } from "@recipe/exports";
-import { RecipeFormComponent } from "./recipes/components/recipe-form/recipe-form.component";
+import { RecipeListComponent, RecipeDetailComponent, RecipeFormComponent } from "@recipe/exports";
 
 export const routes: Routes = [
   {
