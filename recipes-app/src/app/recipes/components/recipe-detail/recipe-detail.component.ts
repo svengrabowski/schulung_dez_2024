@@ -10,6 +10,8 @@ import { RecipePreparationComponent } from "../recipe-preparation/recipe-prepara
 import { Router, RouterLink } from "@angular/router";
 import { MatDivider } from "@angular/material/divider";
 import { DeleteButtonComponent } from "@shared/exports";
+import { MatIcon } from "@angular/material/icon";
+import { MatAnchor, MatButton } from "@angular/material/button";
 
 @Component({
   selector: 'app-recipe-detail',
@@ -21,6 +23,9 @@ import { DeleteButtonComponent } from "@shared/exports";
     MatDivider,
     DeleteButtonComponent,
     RouterLink,
+    MatIcon,
+    MatButton,
+    MatAnchor
   ],
   templateUrl: './recipe-detail.component.html'
 })
