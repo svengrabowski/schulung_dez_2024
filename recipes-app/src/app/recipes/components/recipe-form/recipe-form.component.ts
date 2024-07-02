@@ -108,6 +108,7 @@ export class RecipeFormComponent {
       img: '/recipe_pictures/default.jpg',
       ...this.recipeToEdit,
       ...this.recipeForm.getRawValue(),
+      lastEdited: new Date().toLocaleDateString(),
     } as Recipe;
 
     if(this.recipeToEdit) {
