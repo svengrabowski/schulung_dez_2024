@@ -86,7 +86,7 @@ export class RecipeFormComponent {
     const recipe = {
       ...this.recipeForm.getRawValue(),
       img: '/recipe_pictures/default.jpg',
-      lastEdited: new Date().toLocaleDateString(),
+      lastEdited: new Date().toLocaleString(),
     } as Recipe;
 
     this.recipeService.addNewRecipe(recipe).subscribe(() => {
