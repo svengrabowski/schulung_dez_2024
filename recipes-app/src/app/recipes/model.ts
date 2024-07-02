@@ -48,6 +48,7 @@ export interface RecipeDto {
     name: string;
     img: string;
     portions: number;
+    lastEdited: string;
     duration: Duration;
     level_of_difficulty: Difficulty;
     ingridients: Ingridient[];
