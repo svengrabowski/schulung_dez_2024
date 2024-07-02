@@ -4,11 +4,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { DatePipe } from "@angular/common";
 
 @Component({
   selector: 'app-recipe-list',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatDividerModule, MatGridListModule],
+  imports: [MatCardModule, MatButtonModule, MatDividerModule, MatGridListModule, DatePipe],
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent {

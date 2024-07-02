@@ -25,6 +25,7 @@ export const recipes = [
         name: 'Pizza',
         img: '/recipe_pictures/pizza.jpg',
         servings: 4,
+        lastEdited: "2.7.2024, 09:26:00",
         duration: {
             unit: TimeUnit.MINUTES,
             value: 30
@@ -95,6 +96,7 @@ export const recipes = [
         name: 'Pfannkuchen',
         img: '/recipe_pictures/pfannkuchen.jpg',
         servings: 4,
+        lastEdited: "2.7.2024, 09:26:00",
         duration: {
             unit: TimeUnit.MINUTES,
             value: 10
@@ -138,6 +140,7 @@ export const recipes = [
         name: 'Tacos',
         img: '/recipe_pictures/tacos.jpg',
         servings: 4,
+        lastEdited: "2.7.2024, 09:26:00",
         duration: {
             unit: TimeUnit.MINUTES,
             value: 20
@@ -237,6 +240,7 @@ export const recipes = [
         name: 'Currywurst - Soße',
         img: '/recipe_pictures/currywurst.jpg',
         servings: 2,
+        lastEdited: "2.7.2024, 09:26:00",
         duration: {
             unit: TimeUnit.MINUTES,
             value: 5
@@ -298,6 +302,7 @@ export const recipes = [
         name: 'Kohlrouladen',
         img: '/recipe_pictures/kohlrouladen.jpg',
         servings: 4,
+        lastEdited: "2.7.2024, 09:26:00",
         duration: {
             unit: TimeUnit.MINUTES,
             value: 50
@@ -376,6 +381,7 @@ export const recipes = [
         name: 'Spaghetti Bolognese',
         img: '/recipe_pictures/spaghetti.jpg',
         servings: 4,
+        lastEdited: "2.7.2024, 09:26:00",
         duration: {
             unit: TimeUnit.MINUTES,
             value: 20
