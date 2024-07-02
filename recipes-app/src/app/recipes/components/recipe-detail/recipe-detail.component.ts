@@ -7,10 +7,9 @@ import { getEmptyRecipe } from "../../util/recipe.mapping";
 import { RecipeChipsListComponent } from "../recipe-chips-list/recipe-chips-list.component";
 import { RecipeIngridientListComponent } from "../recipe-ingridient-list/recipe-ingridient-list.component";
 import { RecipePreparationComponent } from "../recipe-preparation/recipe-preparation.component";
-import { MatAnchor, MatButton } from "@angular/material/button";
-import { MatIcon } from "@angular/material/icon";
 import { Router, RouterLink } from "@angular/router";
 import { MatDivider } from "@angular/material/divider";
+import { DeleteButtonComponent } from "@shared/exports";
 
 @Component({
   selector: 'app-recipe-detail',
@@ -19,10 +18,8 @@ import { MatDivider } from "@angular/material/divider";
     RecipeChipsListComponent,
     RecipeIngridientListComponent,
     RecipePreparationComponent,
-    MatButton,
-    MatIcon,
     MatDivider,
-    MatAnchor,
+    DeleteButtonComponent,
     RouterLink,
   ],
   templateUrl: './recipe-detail.component.html'

@@ -8,9 +8,10 @@
     <mat-icon>edit</mat-icon>
     Bearbeiten
   </a>
-  <button mat-button (click)="deleteRecipe()">
-    <mat-icon>delete</mat-icon>
-    Rezept löschen
-  </button>
+  <app-delete-button
+    [withConfirm]="true"
+    confirmTitle="Wirklich Löschen?"
+    confirmMessage="Soll das Rezept {{ this.recipe().name }} wirklich gelöscht werden?"
+    (deleteButtonClicked)="deleteRecipe()"/>
 </div>
 
