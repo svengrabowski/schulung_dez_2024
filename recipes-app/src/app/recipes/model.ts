@@ -35,6 +35,7 @@ export interface Recipe {
     name: string;
     img: string;
     servings: number;
+    lastEdited: string;
     duration: Duration;
     difficulty: Difficulty;
     ingridients: Ingridient[];
