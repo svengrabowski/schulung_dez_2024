@@ -2,15 +2,20 @@ import { Component, inject } from '@angular/core';
 import { MatError, MatFormField, MatLabel } from "@angular/material/form-field";
 import { MatInput } from "@angular/material/input";
 import {
-  FormControl,
   FormGroup,
   NonNullableFormBuilder,
   ReactiveFormsModule,
   Validators
 } from "@angular/forms";
 import { MatButton } from "@angular/material/button";
-import { FormErrorComponent } from "@shared/exports";
-import { Difficulty, PortionUnits, Recipe, TimeUnit } from "../../model";
+import {
+  Difficulty,
+  IngridientForm,
+  PortionUnits,
+  Recipe,
+  RecipeForm,
+  TimeUnit
+} from "../../model";
 import { MatOption } from "@angular/material/core";
 import { MatSelect } from "@angular/material/select";
 import { MatIcon } from "@angular/material/icon";
@@ -18,6 +23,7 @@ import { RecipeService } from "../../services/recipe.service";
 import { CdkTextareaAutosize } from "@angular/cdk/text-field";
 import { Router } from "@angular/router";
 import { difficultyOptions, portionUnitOptions, timeUnitOptions } from "../../util/recipe.options";
+import {FormErrorComponent} from "@shared/exports";
 
 @Component({
   selector: 'app-recipe-form',
@@ -38,7 +44,7 @@ import { difficultyOptions, portionUnitOptions, timeUnitOptions } from "../../ut
   templateUrl: './recipe-form.component.html'
 })
 export class RecipeFormComponent {
-  protected recipeForm;
+  protected recipeForm: FormGroup<RecipeForm>;
   protected timeUnitOptions = timeUnitOptions
   protected difficultyOptions = difficultyOptions
   protected portionUnitOptions = portionUnitOptions;
@@ -57,15 +63,15 @@ export class RecipeFormComponent {
       }),
       difficulty: [Difficulty.EASY, [Validators.required]],
       ingridients: this.formBuilder.array([
-        this.createIngredientFormGroup(),
-        this.createIngredientFormGroup()
+        this.createIngridientFormGroup(),
+        this.createIngridientFormGroup()
       ]),
       preparation: ['', Validators.required]
     });
   }
 
   protected addIngredientFormGroup() {
-    this.recipeForm.controls.ingridients.push(this.createIngredientFormGroup());
+    this.recipeForm.controls.ingridients.push(this.createIngridientFormGroup());
   }
 
   protected removeIngredientFormGroup(index: number) {
@@ -84,7 +90,7 @@ export class RecipeFormComponent {
     }
   }
 
-  private createIngredientFormGroup(): FormGroup<{ name: FormControl<string>; unit: FormControl<PortionUnits>; quantity: FormControl<number>; }> {
+  private createIngridientFormGroup(): FormGroup<IngridientForm> {
     return this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       unit: [PortionUnits.NONE],

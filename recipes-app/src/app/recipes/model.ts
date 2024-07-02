@@ -1,3 +1,5 @@
+import {FormArray, FormControl, FormGroup} from "@angular/forms";
+
 export enum TimeUnit {
     MINUTES = 'Min.',
     HOURES = 'Std.',
@@ -51,4 +53,24 @@ export interface RecipeDto {
     level_of_difficulty: Difficulty;
     ingridients: Ingridient[];
     preparation: string;
+}
+
+export interface IngridientForm {
+  name: FormControl<string>;
+  unit: FormControl<PortionUnits>;
+  quantity: FormControl<number>;
+}
+
+export interface durationForm {
+  value: FormControl<number>;
+  unit: FormControl<TimeUnit>;
+}
+
+export interface RecipeForm {
+  name: FormControl<string>;
+  servings: FormControl<number>;
+  duration: FormGroup<durationForm>;
+  difficulty: FormControl<Difficulty>;
+  ingridients: FormArray<FormGroup<IngridientForm>>;
+  preparation: FormControl<string>;
 }
