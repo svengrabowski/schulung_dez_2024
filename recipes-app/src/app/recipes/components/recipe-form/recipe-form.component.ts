@@ -79,15 +79,18 @@ export class RecipeFormComponent {
   }
 
   protected submitForm() {
-    if (this.recipeForm.valid) {
-      const recipe = {
-        ...this.recipeForm.getRawValue(),
-        img: '/recipe_pictures/default.jpg',
-      } as Recipe;
-      this.recipeService.addNewRecipe(recipe).subscribe(() => {
-        this.router.navigate(['recipes']);
-      });
+    if (this.recipeForm.invalid) {
+      return;
     }
+
+    const recipe = {
+      ...this.recipeForm.getRawValue(),
+      img: '/recipe_pictures/default.jpg',
+    } as Recipe;
+
+    this.recipeService.addNewRecipe(recipe).subscribe(() => {
+      this.router.navigate(['recipes']);
+    });
   }
 
   private createIngridientFormGroup(): FormGroup<IngridientForm> {
