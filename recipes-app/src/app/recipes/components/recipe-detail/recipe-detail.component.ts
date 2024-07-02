@@ -7,10 +7,9 @@ import { getEmptyRecipe } from "../../util/recipe.mapping";
 import { RecipeChipsListComponent } from "../recipe-chips-list/recipe-chips-list.component";
 import { RecipeIngridientListComponent } from "../recipe-ingridient-list/recipe-ingridient-list.component";
 import { RecipePreparationComponent } from "../recipe-preparation/recipe-preparation.component";
-import { MatButton } from "@angular/material/button";
-import { MatIcon } from "@angular/material/icon";
 import { Router } from "@angular/router";
 import { MatDivider } from "@angular/material/divider";
+import { DeleteButtonComponent } from "@shared/exports";
 
 @Component({
   selector: 'app-recipe-detail',
@@ -19,9 +18,8 @@ import { MatDivider } from "@angular/material/divider";
     RecipeChipsListComponent,
     RecipeIngridientListComponent,
     RecipePreparationComponent,
-    MatButton,
-    MatIcon,
     MatDivider,
+    DeleteButtonComponent,
   ],
   templateUrl: './recipe-detail.component.html'
 })
@@ -43,8 +41,9 @@ export class RecipeDetailComponent {
   }
 
   protected deleteRecipe(): void {
-    this.recipeService.deleteRecipe(this.recipe()).subscribe(() => {
-      this.router.navigate(['recipes']);
-    });
+    this.recipeService.deleteRecipe(this.recipe())
+      .subscribe(res => {
+        this.router.navigate(['recipes']);
+      });
   }
 }
