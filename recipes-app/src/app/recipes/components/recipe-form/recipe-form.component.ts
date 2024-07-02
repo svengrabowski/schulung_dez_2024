@@ -100,24 +100,26 @@ export class RecipeFormComponent {
   }
 
   protected submitForm() {
-    if (this.recipeForm.valid) {
-      const recipe = {
-        img: '/recipe_pictures/default.jpg',
-        ...this.recipeToEdit,
-        ...this.recipeForm.getRawValue(),
-      } as Recipe;
+    if (this.recipeForm.invalid) {
+      return;
+    }
 
-      if(this.recipeToEdit) {
-        this.recipeService.updateRecipe(recipe)
-          .subscribe(() => {
-            this.router.navigate(['recipes', recipe.id]);
-          });
-      } else {
-        this.recipeService.addNewRecipe(recipe)
-          .subscribe(() => {
-            this.router.navigate(['recipes']);
-          });
-      }
+    const recipe = {
+      img: '/recipe_pictures/default.jpg',
+      ...this.recipeToEdit,
+      ...this.recipeForm.getRawValue(),
+    } as Recipe;
+
+    if(this.recipeToEdit) {
+      this.recipeService.updateRecipe(recipe)
+        .subscribe(() => {
+          this.router.navigate(['recipes', recipe.id]);
+        });
+    } else {
+      this.recipeService.addNewRecipe(recipe)
+        .subscribe(() => {
+          this.router.navigate(['recipes']);
+        });
     }
   }
 
