@@ -7,7 +7,7 @@ import {
   ReactiveFormsModule,
   Validators
 } from "@angular/forms";
-import { MatButton } from "@angular/material/button";
+import { MatButton, MatIconButton } from "@angular/material/button";
 import {
   Difficulty,
   IngridientForm,
@@ -23,7 +23,7 @@ import { RecipeService } from "../../services/recipe.service";
 import { CdkTextareaAutosize } from "@angular/cdk/text-field";
 import { Router } from "@angular/router";
 import { difficultyOptions, portionUnitOptions, timeUnitOptions } from "../../util/recipe.options";
-import {FormErrorComponent} from "@shared/exports";
+import { FormErrorComponent } from "@shared/exports";
 
 @Component({
   selector: 'app-recipe-form',
@@ -40,6 +40,7 @@ import {FormErrorComponent} from "@shared/exports";
     MatSelect,
     MatIcon,
     CdkTextareaAutosize,
+    MatIconButton,
   ],
   templateUrl: './recipe-form.component.html'
 })
