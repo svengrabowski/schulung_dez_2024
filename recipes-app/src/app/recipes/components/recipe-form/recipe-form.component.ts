@@ -10,10 +10,8 @@ import {
 import { MatButton, MatIconButton } from "@angular/material/button";
 import {
   Difficulty,
-  IngredientForm,
   PortionUnits,
   Recipe,
-  RecipeForm,
   TimeUnit
 } from "../../models/recipe.model";
 import { MatOption } from "@angular/material/core";
@@ -22,8 +20,14 @@ import { MatIcon } from "@angular/material/icon";
 import { RecipeService } from "../../services/recipe.service";
 import { CdkTextareaAutosize } from "@angular/cdk/text-field";
 import { Router } from "@angular/router";
-import { difficultyOptions, portionUnitOptions, timeUnitOptions } from "../../util/recipe.options";
 import { FormErrorComponent } from "@shared/exports";
+import {
+  IngredientForm,
+  RecipeForm,
+  difficultyOptions,
+  portionUnitOptions,
+  timeUnitOptions
+} from "../../models/recipe-form.model";
 
 @Component({
   selector: 'app-recipe-form',

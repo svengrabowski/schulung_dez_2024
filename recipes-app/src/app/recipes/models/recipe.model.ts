@@ -56,23 +56,3 @@ export interface RecipeDto {
     ingredients: Ingredient[];
     preparation: string;
 }
-
-export interface IngredientForm {
-  name: FormControl<string>;
-  unit: FormControl<PortionUnits>;
-  quantity: FormControl<number>;
-}
-
-export interface durationForm {
-  value: FormControl<number>;
-  unit: FormControl<TimeUnit>;
-}
-
-export interface RecipeForm {
-  name: FormControl<string>;
-  servings: FormControl<number>;
-  duration: FormGroup<durationForm>;
-  difficulty: FormControl<Difficulty>;
-  ingredients: FormArray<FormGroup<IngredientForm>>;
-  preparation: FormControl<string>;
-}
