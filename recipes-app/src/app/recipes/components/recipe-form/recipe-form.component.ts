@@ -16,7 +16,7 @@ import {
   Recipe,
   RecipeForm,
   TimeUnit
-} from "../../model";
+} from "../../models/recipe.model";
 import { MatOption } from "@angular/material/core";
 import { MatSelect } from "@angular/material/select";
 import { MatIcon } from "@angular/material/icon";
