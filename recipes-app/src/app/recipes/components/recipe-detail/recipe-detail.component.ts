@@ -3,8 +3,8 @@ import { RecipeService } from "../../services/recipe.service";
 import { Recipe } from "../../models/recipe.model";
 import { toObservable } from "@angular/core/rxjs-interop";
 import { distinctUntilChanged, switchMap } from "rxjs";
-import { getEmptyRecipe } from "../../util/recipe.mapping";
-import { RecipeChipsListComponent } from "../recipe-chips-list/recipe-chips-list.component";
+import { getEmptyRecipe } from "../../mappings/recipe.mapping";
+import { RecipeInfoListComponent } from "../recipe-info-list/recipe-info-list.component";
 import { RecipeIngredientListComponent } from "../recipe-ingredient-list/recipe-ingredient-list.component";
 import { RecipePreparationComponent } from "../recipe-preparation/recipe-preparation.component";
 import { Router, RouterLink } from "@angular/router";
@@ -17,7 +17,7 @@ import { MatAnchor, MatButton } from "@angular/material/button";
   selector: 'app-recipe-detail',
   standalone: true,
   imports: [
-    RecipeChipsListComponent,
+    RecipeInfoListComponent,
     RecipeIngredientListComponent,
     RecipePreparationComponent,
     MatDivider,
