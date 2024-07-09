@@ -25,7 +25,7 @@ export interface Duration {
     value: number;
 }
 
-export interface Ingridient {
+export interface Ingredient {
     unit: PortionUnits;
     quantity: number;
     name: string;
@@ -38,6 +38,6 @@ export interface Recipe {
     lastEdited: string;
     duration: Duration;
     difficulty: Difficulty;
-    ingridients: Ingridient[];
+    ingredients: Ingredient[];
     preparation: string;
 }
