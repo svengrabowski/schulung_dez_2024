@@ -1,10 +1,10 @@
 import { Component, input } from '@angular/core';
-import { Recipe } from '../../model';
+import { Recipe } from '../../models/recipe.model';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {DatePipe} from "@angular/common";
+import { DatePipe } from "@angular/common";
 
 @Component({
   selector: 'app-recipe-list-item',
