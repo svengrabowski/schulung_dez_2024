@@ -11,7 +11,7 @@ import { MatButton, MatIconButton } from "@angular/material/button";
 import { FormErrorComponent, isDefined } from "@shared/exports";
 import {
   Difficulty,
-  IngridientForm,
+  IngredientForm,
   PortionUnits,
   Recipe,
   RecipeForm,
@@ -68,7 +68,7 @@ export class RecipeFormComponent {
         unit: [TimeUnit.MINUTES, Validators.required],
       }),
       difficulty: [Difficulty.EASY, [Validators.required]],
-      ingridients: this.formBuilder.array([
+      ingredients: this.formBuilder.array([
         this.createIngridientFormGroup(),
         this.createIngridientFormGroup()
       ]),
@@ -93,11 +93,11 @@ export class RecipeFormComponent {
   }
 
   protected addIngredientFormGroup() {
-    this.recipeForm.controls.ingridients.push(this.createIngridientFormGroup());
+    this.recipeForm.controls.ingredients.push(this.createIngridientFormGroup());
   }
 
   protected removeIngredientFormGroup(index: number) {
-    this.recipeForm.controls.ingridients.removeAt(index);
+    this.recipeForm.controls.ingredients.removeAt(index);
   }
 
   protected submitForm() {
@@ -125,7 +125,7 @@ export class RecipeFormComponent {
     }
   }
 
-  private createIngridientFormGroup(): FormGroup<IngridientForm> {
+  private createIngridientFormGroup(): FormGroup<IngredientForm> {
     return this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       unit: [PortionUnits.NONE],

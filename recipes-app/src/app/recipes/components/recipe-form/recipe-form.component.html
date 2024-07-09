@@ -53,8 +53,8 @@
       </mat-error>
     </mat-form-field>
 
-    <ng-container formArrayName="ingridients">
-      @for (ingridientForm of recipeForm.controls.ingridients.controls; track $index) {
+    <ng-container formArrayName="ingredients">
+      @for (ingridientForm of recipeForm.controls.ingredients.controls; track $index) {
         <div [formGroup]="ingridientForm">
           <mat-form-field>
             <mat-label>Zutaten Name</mat-label>

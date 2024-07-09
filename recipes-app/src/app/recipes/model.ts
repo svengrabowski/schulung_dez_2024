@@ -57,7 +57,7 @@ export interface RecipeDto {
     preparation: string;
 }
 
-export interface IngridientForm {
+export interface IngredientForm {
   name: FormControl<string>;
   unit: FormControl<PortionUnits>;
   quantity: FormControl<number>;
@@ -73,6 +73,6 @@ export interface RecipeForm {
   servings: FormControl<number>;
   duration: FormGroup<durationForm>;
   difficulty: FormControl<Difficulty>;
-  ingridients: FormArray<FormGroup<IngridientForm>>;
+  ingredients: FormArray<FormGroup<IngredientForm>>;
   preparation: FormControl<string>;
 }
