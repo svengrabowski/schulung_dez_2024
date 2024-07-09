@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Ingredient } from "../../model";
+import { Ingredient } from "../../models/recipe.model";
 import { MatListModule } from "@angular/material/list";
 
 @Component({

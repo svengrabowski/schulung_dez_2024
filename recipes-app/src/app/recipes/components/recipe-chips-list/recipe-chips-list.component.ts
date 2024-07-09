@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { MatChipsModule } from "@angular/material/chips";
-import { Recipe } from "../../model";
+import { Recipe } from "../../models/recipe.model";
 import { MatIcon } from "@angular/material/icon";
 
 @Component({
