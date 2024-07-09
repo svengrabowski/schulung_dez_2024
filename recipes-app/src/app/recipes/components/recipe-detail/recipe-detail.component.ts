@@ -1,6 +1,6 @@
 import { Component, inject, input, signal, WritableSignal } from '@angular/core';
 import { RecipeService } from "../../services/recipe.service";
-import { Recipe } from "../../model";
+import { Recipe } from "../../models/recipe.model";
 import { toObservable } from "@angular/core/rxjs-interop";
 import { distinctUntilChanged, switchMap } from "rxjs";
 import { getEmptyRecipe } from "../../util/recipe.mapping";
