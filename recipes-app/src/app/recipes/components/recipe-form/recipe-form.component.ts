@@ -64,15 +64,15 @@ export class RecipeFormComponent {
       }),
       difficulty: [Difficulty.EASY, [Validators.required]],
       ingredients: this.formBuilder.array([
-        this.createIngridientFormGroup(),
-        this.createIngridientFormGroup()
+        this.createIngredientFormGroup(),
+        this.createIngredientFormGroup()
       ]),
       preparation: ['', Validators.required]
     });
   }
 
   protected addIngredientFormGroup() {
-    this.recipeForm.controls.ingredients.push(this.createIngridientFormGroup());
+    this.recipeForm.controls.ingredients.push(this.createIngredientFormGroup());
   }
 
   protected removeIngredientFormGroup(index: number) {
@@ -95,7 +95,7 @@ export class RecipeFormComponent {
     });
   }
 
-  private createIngridientFormGroup(): FormGroup<IngredientForm> {
+  private createIngredientFormGroup(): FormGroup<IngredientForm> {
     return this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       unit: [PortionUnits.NONE],
