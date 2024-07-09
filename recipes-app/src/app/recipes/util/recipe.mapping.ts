@@ -44,7 +44,7 @@ export function getEmptyRecipe(): Recipe {
       value: 0,
       unit: TimeUnit.MINUTES,
     },
-    ingridients: [],
+    ingredients: [],
     preparation: '',
   }
 }
