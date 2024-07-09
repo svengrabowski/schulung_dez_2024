@@ -5,7 +5,7 @@ import { toObservable } from "@angular/core/rxjs-interop";
 import { distinctUntilChanged, switchMap } from "rxjs";
 import { getEmptyRecipe } from "../../util/recipe.mapping";
 import { RecipeChipsListComponent } from "../recipe-chips-list/recipe-chips-list.component";
-import { RecipeIngridientListComponent } from "../recipe-ingridient-list/recipe-ingridient-list.component";
+import { RecipeIngredientListComponent } from "../recipe-ingredient-list/recipe-ingredient-list.component";
 import { RecipePreparationComponent } from "../recipe-preparation/recipe-preparation.component";
 import { Router } from "@angular/router";
 import { MatDivider } from "@angular/material/divider";
@@ -16,7 +16,7 @@ import { DeleteButtonComponent } from "@shared/exports";
   standalone: true,
   imports: [
     RecipeChipsListComponent,
-    RecipeIngridientListComponent,
+    RecipeIngredientListComponent,
     RecipePreparationComponent,
     MatDivider,
     DeleteButtonComponent,
