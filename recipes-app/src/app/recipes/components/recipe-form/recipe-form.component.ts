@@ -85,7 +85,7 @@ export class RecipeFormComponent {
         this.recipeToEdit = recipe;
         this.recipeToEdit.ingredients.forEach((_,index) => {
           if (index > 1) {
-            this.recipeForm.controls.ingredients.push(this.createIngridientFormGroup());
+            this.recipeForm.controls.ingredients.push(this.createIngredientFormGroup());
           }
         });
         this.recipeForm.patchValue(this.recipeToEdit);
