@@ -1,4 +1,4 @@
-import { TimeUnit, Difficulty, PortionUnits, Recipe } from "../model";
+import { TimeUnit, Difficulty, PortionUnits, Recipe } from "../models/recipe.model";
 
 export const recipes: Recipe[] = [
     {
