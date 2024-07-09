@@ -1,4 +1,4 @@
-import { Recipe, RecipeDto } from "../model";
+import { Recipe, RecipeDto } from "../models/recipe.model";
 
 export function mapRecipeDtoToRecipe(recipeDto: RecipeDto): Recipe {
     return {
