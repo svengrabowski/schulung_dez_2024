@@ -11,7 +11,7 @@ export const recipes: Recipe[] = [
             value: 30
         },
         difficulty: Difficulty.MEDIUM,
-        ingridients: [
+        ingredients: [
             {
                 unit: PortionUnits.GRAM,
                 quantity: 200,
@@ -82,7 +82,7 @@ export const recipes: Recipe[] = [
             value: 10
         },
         difficulty: Difficulty.EASY,
-        ingridients: [
+        ingredients: [
             {
                 unit: PortionUnits.NONE,
                 quantity: 3,
@@ -126,7 +126,7 @@ export const recipes: Recipe[] = [
             value: 20
         },
         difficulty: Difficulty.EASY,
-        ingridients: [
+        ingredients: [
             {
                 unit: PortionUnits.GRAM,
                 quantity: 100,
@@ -226,7 +226,7 @@ export const recipes: Recipe[] = [
             value: 5
         },
         difficulty: Difficulty.EASY,
-        ingridients: [
+        ingredients: [
             {
                 unit: PortionUnits.GRAM,
                 quantity: 10,
@@ -288,7 +288,7 @@ export const recipes: Recipe[] = [
             value: 50
         },
         difficulty: Difficulty.MEDIUM,
-        ingridients: [
+        ingredients: [
             {
                 unit: PortionUnits.NONE,
                 quantity: 1,
@@ -367,7 +367,7 @@ export const recipes: Recipe[] = [
             value: 20
         },
         difficulty: Difficulty.MEDIUM,
-        ingridients: [
+        ingredients: [
             {
                 unit: PortionUnits.NONE,
                 quantity: 1,
