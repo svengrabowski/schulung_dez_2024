@@ -4,11 +4,11 @@ import { Recipe } from "../../models/recipe.model";
 import { MatIcon } from "@angular/material/icon";
 
 @Component({
-  selector: 'app-recipe-chips-list',
+  selector: 'app-recipe-info-list',
   standalone: true,
   imports: [MatChipsModule, MatIcon],
-  templateUrl: './recipe-chips-list.component.html'
+  templateUrl: './recipe-info-list.component.html'
 })
-export class RecipeChipsListComponent {
+export class RecipeInfoListComponent {
   public recipe = input.required<Recipe>();
 }
