@@ -11,10 +11,8 @@ import { MatButton, MatIconButton } from "@angular/material/button";
 import { FormErrorComponent, isDefined } from "@shared/exports";
 import {
   Difficulty,
-  IngredientForm,
   PortionUnits,
   Recipe,
-  RecipeForm,
   TimeUnit
 } from "../../models/recipe.model";
 import { MatOption } from "@angular/material/core";
@@ -25,7 +23,13 @@ import { CdkTextareaAutosize } from "@angular/cdk/text-field";
 import { Router } from "@angular/router";
 import { toObservable } from "@angular/core/rxjs-interop";
 import { distinctUntilChanged, filter, switchMap } from "rxjs";
-import { difficultyOptions, portionUnitOptions, timeUnitOptions } from "../../util/recipe.options";
+import {
+  IngredientForm,
+  RecipeForm,
+  difficultyOptions,
+  portionUnitOptions,
+  timeUnitOptions
+} from "../../models/recipe-form.model";
 
 @Component({
   selector: 'app-recipe-form',
