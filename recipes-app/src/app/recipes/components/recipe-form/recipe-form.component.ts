@@ -24,7 +24,7 @@ import { RecipeService } from "../../services/recipe.service";
 import { CdkTextareaAutosize } from "@angular/cdk/text-field";
 import { Router } from "@angular/router";
 import { toObservable } from "@angular/core/rxjs-interop";
-import { distinctUntilChanged, filter, switchMap, tap } from "rxjs";
+import { distinctUntilChanged, filter, switchMap } from "rxjs";
 import { difficultyOptions, portionUnitOptions, timeUnitOptions } from "../../util/recipe.options";
 
 @Component({
@@ -83,9 +83,9 @@ export class RecipeFormComponent {
       )
       .subscribe(recipe => {
         this.recipeToEdit = recipe;
-        this.recipeToEdit.ingridients.forEach((_,index) => {
+        this.recipeToEdit.ingredients.forEach((_,index) => {
           if (index > 1) {
-            this.recipeForm.controls.ingridients.push(this.createIngridientFormGroup());
+            this.recipeForm.controls.ingredients.push(this.createIngridientFormGroup());
           }
         });
         this.recipeForm.patchValue(this.recipeToEdit);
