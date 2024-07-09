@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { Recipe, RecipeDto } from '../models/recipe.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import {mapRecipeDtoArrayToRecipeArray, mapRecipeDtoToRecipe, mapRecipeToRecipeDto} from '../util/recipe.mapping';
+import {mapRecipeDtoArrayToRecipeArray, mapRecipeDtoToRecipe, mapRecipeToRecipeDto} from '../mappings/recipe.mapping';
 import { environment } from "@environment/exports";
 
 @Injectable({
