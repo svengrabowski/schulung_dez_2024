@@ -9,7 +9,7 @@ export function mapRecipeDtoToRecipe(recipeDto: RecipeDto): Recipe {
         lastEdited: recipeDto.lastEdited,
         duration: recipeDto.duration,
         difficulty: recipeDto.level_of_difficulty,
-        ingridients: [ ...recipeDto.ingridients ],
+        ingredients: [ ...recipeDto.ingredients ],
         preparation: recipeDto.preparation
     }
 };
@@ -27,7 +27,7 @@ export function mapRecipeToRecipeDto(recipe: Recipe): RecipeDto {
         lastEdited: recipe.lastEdited,
         duration: recipe.duration,
         level_of_difficulty: recipe.difficulty,
-        ingridients: [ ...recipe.ingridients ],
+        ingredients: [ ...recipe.ingredients ],
         preparation: recipe.preparation
     }
 };

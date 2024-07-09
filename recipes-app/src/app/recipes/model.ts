@@ -51,6 +51,6 @@ export interface RecipeDto {
     lastEdited: string;
     duration: Duration;
     level_of_difficulty: Difficulty;
-    ingridients: Ingridient[];
+    ingredients: Ingredient[];
     preparation: string;
 }
